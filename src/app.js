@@ -9,6 +9,9 @@ const transactionRoutes = require('./routes/transaction.routes');
 const summaryRoutes = require('./routes/summary.routes');
 const errorMiddleware = require('./middlewares/error.middleware');
 
+// Swagger Docs
+const setupSwagger = require('./docs/swagger');
+
 const app = express();
 
 // Middlewares
@@ -16,6 +19,9 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Swagger UI
+setupSwagger(app);
 
 // Health check
 app.get('/health', (req, res) => {
