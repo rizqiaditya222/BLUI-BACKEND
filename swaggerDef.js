@@ -1,4 +1,3 @@
-// swaggerDef.js
 module.exports = {
   openapi: '3.0.0',
   info: {
@@ -10,6 +9,10 @@ module.exports = {
     {
       url: 'http://localhost:3000',
       description: 'Local server',
+    },
+    {
+      url: 'http://159.223.67.39:3000',
+      description: 'VPS server',
     },
   ],
 };
